@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://8wbjnmtshco8"]
+
+[ext_resource type="Script" path="res://characters/playerCharacter.gd" id="1_puwry"]
+[ext_resource type="Texture2D" uid="uid://bd45qdiro4rb7" path="res://textures/Body.png" id="2_gv3mw"]
+[ext_resource type="Texture2D" uid="uid://deqt833kpf0n4" path="res://textures/tshirt.png" id="2_xjt1e"]
+[ext_resource type="Texture2D" uid="uid://ceirkx2twrcq5" path="res://textures/head.png" id="3_fhicc"]
+[ext_resource type="PackedScene" uid="uid://b63ekhkfx3413" path="res://items/weapons/basicSword.tscn" id="4_6327x"]
+[ext_resource type="Texture2D" uid="uid://c04tn5wgiuutx" path="res://textures/leg.png" id="5_f7lfx"]
+[ext_resource type="Texture2D" uid="uid://c42md7y5j2610" path="res://textures/hand.png" id="7_vr43f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akafa"]
+size = Vector2(16, 9)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_puwry")
+bodyTexture = ExtResource("2_xjt1e")
+headTexture = ExtResource("3_fhicc")
+
+[node name="BasicSword" parent="." instance=ExtResource("4_6327x")]
+position = Vector2(13, 0)
+
+[node name="RightHandWeaponSprite" type="Sprite2D" parent="."]
+position = Vector2(12, -2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_akafa")
+
+[node name="RightLeg" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+texture = ExtResource("5_f7lfx")
+offset = Vector2(1, 1)
+
+[node name="LeftLeg" type="Sprite2D" parent="."]
+position = Vector2(-4, 4)
+texture = ExtResource("5_f7lfx")
+offset = Vector2(1, 1)
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_gv3mw")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(1, -9)
+texture = ExtResource("3_fhicc")
+
+[node name="LeftHand" type="Sprite2D" parent="."]
+position = Vector2(7, -3)
+texture = ExtResource("7_vr43f")
+offset = Vector2(0, 8)
+
+[node name="RightHand" type="Sprite2D" parent="."]
+position = Vector2(-6, -3)
+texture = ExtResource("7_vr43f")
+offset = Vector2(0, 8)

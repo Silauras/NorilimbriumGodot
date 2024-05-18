@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://6717y2vygokm"]
+
+[ext_resource type="Texture2D" uid="uid://bi04rc8cran6b" path="res://textures/items/basic_sword.png" id="1_j5hg4"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_r4et0"]
+
+[resource]
+script = ExtResource("2_r4et0")
+weaponName = "BasicSword"
+itemTexture = ExtResource("1_j5hg4")
+description = "BasicSword"
+damage = 100.0
+attackSpeed = 10.0
+isMelee = true
+useTime = null
+rare = null
+knockback = null
+animationType = null
+countOfProjectiles = null
+noMelle = null
+autoReuse = null
+accuracy = null
+only2Hands = true

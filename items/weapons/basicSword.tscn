@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b63ekhkfx3413"]
+
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="1_325en"]
+[ext_resource type="Texture2D" uid="uid://bi04rc8cran6b" path="res://textures/items/basic_sword.png" id="2_3cqar"]
+
+[node name="BasicSword" type="Node2D"]
+script = ExtResource("1_325en")
+itemTexture = ExtResource("2_3cqar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398

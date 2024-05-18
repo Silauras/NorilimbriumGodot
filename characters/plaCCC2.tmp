@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://8wbjnmtshco8"]
+
+[ext_resource type="Script" path="res://characters/playerCharacter.gd" id="1_puwry"]
+[ext_resource type="Texture2D" uid="uid://bd45qdiro4rb7" path="res://textures/Body.png" id="2_gv3mw"]
+[ext_resource type="Texture2D" uid="uid://ceirkx2twrcq5" path="res://textures/head.png" id="3_fhicc"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="4_286ub"]
+[ext_resource type="Texture2D" uid="uid://bi04rc8cran6b" path="res://textures/items/basic_sword.png" id="5_bpcc4"]
+[ext_resource type="Texture2D" uid="uid://bfalmxqesce6v" path="res://icon.svg" id="6_ul4iq"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("rightHandWeapon", "weaponSprite")]
+script = ExtResource("1_puwry")
+rightHandWeapon = NodePath("Weapon")
+weaponSprite = NodePath("Sprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_gv3mw")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("3_fhicc")
+
+[node name="Weapon" type="Node2D" parent="."]
+position = Vector2(26, 0)
+script = ExtResource("4_286ub")
+itemTexture = ExtResource("5_bpcc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 0)
+texture = ExtResource("6_ul4iq")
